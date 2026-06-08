@@ -2,19 +2,19 @@ export default {
   async fetch(request, env) {
     const url = new URL(request.url);
     
+    // Explicit headers allowing your GitHub page to fetch data safely
     const corsHeaders = {
       "Access-Control-Allow-Origin": "*",
       "Access-Control-Allow-Methods": "GET, POST, OPTIONS",
       "Access-Control-Allow-Headers": "Content-Type",
     };
 
-    // 1. Handle browser safety preflight checks
+    // Handle browser security checks
     if (request.method === "OPTIONS") {
       return new Response(null, { headers: corsHeaders });
     }
 
-    // 2. DATABASE API ROUTING
-    // If the request goes to /api/messages, talk to Cloudflare D1
+    // Capture traffic heading to your specific data path
     if (url.pathname === "/api/messages") {
       try {
         if (request.method === "GET") {
@@ -37,8 +37,7 @@ export default {
       }
     }
 
-    // 3. Fallback: If you are hosting the frontend HTML directly inside this worker, 
-    // let it fall through to your asset serving logic here.
-    return new Response("Frontend Asset Fallback - API paths require /api/messages", { status: 404 });
+    // Fallback if the path is wrong
+    return new Response("API Path Not Found. Use /api/messages", { status: 404 });
   }
 };
