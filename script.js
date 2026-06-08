@@ -1,5 +1,5 @@
 // Paste your deployed Cloudflare Worker link here
-const WORKER_URL = "/api/messages";
+const WORKER_URL = "https://cloudflare-iti-lab-exam.241160.workers.dev/api/messages";
 
 document.addEventListener("DOMContentLoaded", () => {
   // 1. Instantly register dynamic elements
