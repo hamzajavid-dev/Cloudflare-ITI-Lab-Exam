@@ -1,39 +1,50 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Task 2: Cloudflare Static Hosting Verification</title>
+  <title>Task 2: Cloudflare Database Integration</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <div class="card">
     <div class="logo">☁️</div>
     <h1>Cloudflare Pages Deployment</h1>
-    <p class="subtitle">Task 2 Status Verification</p>
+    <p class="subtitle">Task 2: Database Connectivity</p>
     
-    <!-- Added Developer Name Tag -->
     <div class="author-tag">
-      <span>Developer:</span> <strong>Muhammad Hamza Javid</strong>
-      <span><br>Roll No:</span> <strong>241160</strong>
+      <span>Developer:</span> <strong>Muhammad Hamza Javid</strong><br>
+      <span>Roll No:</span> <strong>241160</strong>
     </div>
     
     <div class="status-box">
       <div class="status-item">
-        <span class="label">HTML5 Structure:</span>
-        <span class="badge success">Verified</span>
-      </div>
-      <div class="status-item">
-        <span class="label">CSS3 Styling:</span>
-        <span class="badge success">Active</span>
-      </div>
-      <div class="status-item">
         <span class="label">JS Functionality:</span>
         <span id="js-badge" class="badge danger">Checking...</span>
       </div>
+      <div class="status-item">
+        <span class="label">Database Sync:</span>
+        <span id="db-badge" class="badge danger">Offline</span>
+      </div>
     </div>
 
-    <button id="theme-toggle" class="btn">Toggle Theme</button>
+    <!-- DB Interaction: Write Section -->
+    <div class="interactive-section">
+      <h3>Add to Cloudflare D1</h3>
+      <form id="db-form">
+        <input type="text" id="note-input" placeholder="Enter a custom message..." required />
+        <button type="submit" class="btn primary-btn">Submit to DB</button>
+      </form>
+    </div>
+
+    <!-- DB Interaction: Read Section -->
+    <div class="interactive-section">
+      <h3>Live Database Content</h3>
+      <div id="db-loading" class="loading-text">Fetching live rows...</div>
+      <ul id="db-list" class="db-list"></ul>
+    </div>
+
+    <button id="theme-toggle" class="btn secondary-btn">Toggle Theme</button>
     <div id="timestamp" class="timestamp"></div>
   </div>
   <script src="script.js"></script>
