@@ -1,6 +1,5 @@
 // Paste your deployed Cloudflare Worker link here
 const WORKER_URL = "/api/messages";
-";
 
 document.addEventListener("DOMContentLoaded", () => {
   // 1. Instantly register dynamic elements
