@@ -1,5 +1,4 @@
 // Paste your deployed Cloudflare Worker link here
-const WORKER_URL = "// Change this line from "https://workers.dev/" to your specific backend url:
 const WORKER_URL = "https://cloudflare-iti-lab-exam.241160.workers.dev";
 
 document.addEventListener("DOMContentLoaded", () => {
