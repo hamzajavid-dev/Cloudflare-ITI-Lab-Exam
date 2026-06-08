@@ -1,0 +1,102 @@
+:root {
+  --bg-color: #f4f6f9;
+  --card-bg: #ffffff;
+  --text-main: #2c3e50;
+  --text-sub: #7f8c8d;
+  --cf-orange: #f38020;
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+}
+
+[data-theme="dark"] {
+  --bg-color: #0f172a;
+  --card-bg: #1e293b;
+  --text-main: #f8fafc;
+  --text-sub: #94a3b8;
+  --shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+body {
+  font-family: system-ui, -apple-system, sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  transition: background-color 0.3s ease;
+}
+
+.card {
+  background: var(--card-bg);
+  padding: 2.5rem;
+  border-radius: 16px;
+  box-shadow: var(--shadow);
+  text-align: center;
+  max-width: 400px;
+  width: 90%;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.logo { font-size: 3rem; margin-bottom: 1rem; }
+h1 { font-size: 1.5rem; margin: 0 0 0.5rem 0; color: var(--cf-orange); }
+.subtitle { color: var(--text-sub); margin: 0 0 2rem 0; font-size: 0.95rem; }
+
+.status-box {
+  background: rgba(0, 0, 0, 0.02);
+  border: 1px solid rgba(0, 0, 0, 0.05);
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+}
+[data-theme="dark"] .status-box {
+  background: rgba(255, 255, 255, 0.03);
+  border-color: rgba(255, 255, 255, 0.05);
+}
+
+.status-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0.75rem 0;
+}
+.label { font-size: 0.9rem; font-weight: 500; }
+
+.badge {
+  padding: 0.25rem 0.6rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+.badge.success { background: #d1fae5; color: #065f46; }
+.badge.danger { background: #fee2e2; color: #991b1b; }
+
+.btn {
+  background: var(--cf-orange);
+  color: white;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  width: 100%;
+  transition: transform 0.1s ease;
+}
+.btn:active { transform: scale(0.98); }
+
+.timestamp {
+  margin-top: 1.5rem;
+  font-size: 0.8rem;
+  color: var(--text-sub);
+}
+.author-tag {
+  margin: -1rem 0 1.5rem 0;
+  font-size: 0.9rem;
+  color: var(--text-sub);
+  background: rgba(0, 0, 0, 0.01);
+  padding: 0.4rem;
+  border-radius: 6px;
+}
+[data-theme="dark"] .author-tag {
+  background: rgba(255, 255, 255, 0.02);
+}
